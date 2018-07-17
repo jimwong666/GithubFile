@@ -33,12 +33,19 @@ module.exports = {
     ** img hash
     */
     loaders:[{
-      test:/\.(png|jpe?g|gif|svg)$/,
-      loader:"url-loader",
-      query:{
-        limit:100000,
-        name:'img/[name].[hash].[ext]'
-      }
+      test:/\.(png|jpe?g|gif|svg)$/i,
+      use:[
+        {
+          loader: 'url-loader',
+          options:{
+            limit:100000,
+            name:'img/[name].[hash].[ext]'
+          }
+        },
+        {
+          loader: 'image-trace-loader'
+        }
+      ]
     }],
     /*
     ** Run ESLint on save

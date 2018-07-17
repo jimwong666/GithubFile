@@ -4,6 +4,7 @@
     <nuxt/>
     <div>
       <img src="~assets/images/tyx.png" alt=""><span>assets文件夹</span>
+      <img :src="src"><span>wwww</span>
     </div>
     <div>
       <img src="~static/tyx.png" alt=""><span>static文件夹</span>
@@ -11,6 +12,18 @@
     <div class="imgTest">背景</div>
   </div>
 </template>
+<script>
+  import src from '../assets/images/tyx.png'
+
+  export default{
+    data(){
+      return{
+        src: src
+      }
+    }
+  }
+
+</script>
 
 <style>
 html {

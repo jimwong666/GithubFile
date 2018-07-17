@@ -15,6 +15,7 @@
   "config": {},
   "dependencies": {
     "axios": "^0.18.0",
+    "image-trace-loader": "^0.1.0",
     "nuxt": "^1.0.0",
     "url-loader": "^1.0.1"
   },
