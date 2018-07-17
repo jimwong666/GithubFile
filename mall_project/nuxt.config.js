@@ -12,7 +12,11 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
-  },
+  }, 
+  /*
+  ** css golbal config
+  */
+  css:['~assets/css/base.css','~assets/css/reset.css'],
   /*
   ** Customize the progress bar color
   */
@@ -21,6 +25,10 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    /* 
+    ** 防止重复打包
+    */
+    // vendor: ['axios'],
     /*
     ** Run ESLint on save
     */
