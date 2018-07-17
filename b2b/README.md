@@ -21,3 +21,11 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+
+# 修改端口号
+$ "config":{
+$     "nuxt":{
+$       "host":"127.0.0.1",
+$       "port":"1818"
+$     }
+$   }
