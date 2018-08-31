@@ -1,0 +1,13 @@
+<div>
+    <span class="inline">ÐÐÄÚ</span>
+    <div class="block">¿é¼¶</div>	
+</div>
+
+
+
+.inline{
+    flot:left;
+}
+.block{
+    overflow: hidden;
+}

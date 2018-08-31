@@ -1,0 +1,12 @@
+.style只能获取行内样式。
+
+window.getComputedStyle(element, null).getPropertyValue("KEY");可获取内联和外部样式。IE用currentStyle。
+【此处的element必须是dom，querySelector与documentElement等不行，getElementById可以】
+
+
+其实 window.getComputedStyle(element, null).KEY 也行，但是想“float”这样的属性就必须写成“cssFloat”或“styleFloat”，
+而.getPropertyValue("KEY")则可以避免！
+
+
+
+setProperty(propertyName,value,priority)可修改样式

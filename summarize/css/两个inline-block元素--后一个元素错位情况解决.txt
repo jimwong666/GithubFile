@@ -1,0 +1,7 @@
+可使用：
+
+1、后一个inline-block，绝对定位 position:absolute;
+
+2、vertical-align:middle;
+
+3、也许可以 font-size: 0;

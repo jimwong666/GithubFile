@@ -1,0 +1,39 @@
+/ 圆形随机旋转
+function circularRotation(){
+    var CR = $('.circularRotation'),
+        rotate = 0;
+
+    // 范围内的随机值
+    function getRandom(minNum,maxNum){
+        let numRange = maxNum - minNum;
+        let randomNum = Math.random();
+        return (minNum + Math.round(randomNum * numRange));
+    };
+    
+    function generatePromise(){
+        return new Promise(function(reslove,reject){
+            try{
+                setTimeout(function(){
+                    rotate += getRandom(45,135);
+                    $('.circularRotation').css('transform','rotate('+ rotate + 'deg)');
+                    reslove();
+                },getRandom(2000,5000))
+            }catch(e){
+                reject('promise error:' + e);
+            }
+            
+        })
+    }
+
+    async function asyncF(){
+        try{
+            while(true){
+                await generatePromise();
+            }
+        }catch(e){
+            throw new Error('async error!');
+        }
+    }
+
+    asyncF();
+}
