@@ -38,6 +38,14 @@ export default {
       ccData:''
     }
   },
+  // 这是第二种 $on 的写法，第一种写法是写在组件里（上面hiii组件那样）
+  // mounted(){
+  //   var self = this;
+  //    this.$refs['childComp'].$on('childEvent',function(val){
+  //      self.ccData = val;
+  //      console.log(val)
+  //   })
+  // },
   methods:{
     watchChildEvent:function(val){
       this.ccData = val;
