@@ -30,7 +30,7 @@
             };
         };
 
-        content.onmousemove = debounce(count,1000);
+        // content.onmousemove = debounce(count,1000);
 
 
         // 节流（单位时间内最多只执行一次）
@@ -49,7 +49,8 @@
                 },wait);
             };
         };
-        // content.onmousemove = throttle(count,1000);
+        
+        content.onmousemove = throttle(count,1000);
 
 
 
