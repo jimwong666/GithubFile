@@ -6,28 +6,28 @@
 </template>
 
 <script>
-	import { mapState,mapMutations } from 'vuex';
+import { mapState, mapMutations } from "vuex";
 
-	export default {
-		name: "Footer",
-		methods:{
-			...mapMutations(['clear'])
-		}
-	};
+export default {
+  name: "Footer",
+  methods: {
+    ...mapMutations(["clear"])
+  }
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-	.Footer {
-		color: #666;
-		font-size: 14px;
-		text-align: center;
-		margin-top: 10px;
-	}
-	button {
-		background: #E05C47;
-		color: #fff;
-		border-radius: 5px;
-		outline: none;
-	}
+.Footer {
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
+button {
+  background: #e05c47;
+  color: #fff;
+  border-radius: 5px;
+  outline: none;
+}
 </style>

@@ -41,93 +41,91 @@
 <script>
 import Header from "@/components/_header.vue";
 import Footer from "@/components/_footer.vue";
-import {mapState,mapMutations} from 'vuex';
+import { mapState, mapMutations } from "vuex";
 
 export default {
-	name: "home",
-	components: {
-		Header,
-		Footer
-	},
-	data(){
-		return{
-
-		}
-	},
-	computed:{
-		...mapState(['doing','done'])
-	},
-	methods:{
-		...mapMutations(['remove','push'])
-	}
+  name: "home",
+  components: {
+    Header,
+    Footer
+  },
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapState(["doing", "done"])
+  },
+  methods: {
+    ...mapMutations(["remove", "push"])
+  }
 };
 </script>
 
 <style>
-	@import '../assets/css/reset.css';
+@import "../assets/css/reset.css";
 
-	h3 {
-		color: #000;
-		font-size: 25px;
-	}
-	.ToDoList {
-		width: 600px;
-		margin: 0 auto;
-	}
-	.ToDoList_part {
-		margin-top: 10px;
-		padding-bottom: 10px;
-		border-bottom: 1px solid rgb(170, 170, 170);
-	}
-	.doNum{
-		display: inline-block;
-		height: 20px;
-		line-height: 20px;
-		padding: 0 6px;
-		margin-right: 5px; 
-		border-radius: 20px;
-		background: #E6E6FA;
-		text-align: center;
-		color: #666;
-		font-size: 14px;
-	}
-	.listHead{
-		display: flex;
-		justify-content: space-between;
-	}
-	.item {
-		display: flex;
-		justify-content: space-between;
-		height: 32px;
-		line-height: 32px;
-		background: #fff;
-		margin-top: 10px;
-		padding: 0 20px;
-		border-radius: 3px;
-		border-left: 5px solid #629A9C;
-		box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-		
-		vertical-align: bottom;
-	}
-	.item input {
-		width: 20px;
-		height: 20px;
-		margin-right: 10px;
-		cursor: pointer;
-	}
-	.removeItem {
-		font-weight: bold;
-		color: #E05C47;
-		width: 20px;
-		height: 20px;
-		line-height: 22px;
-		border-radius: 20px;
-		border: 1px solid #E05C47;
-		cursor: pointer;
-		margin-top: 5px;
-	}
-	.opcity_50{
-		opacity: 0.5;
-	}
+h3 {
+  color: #000;
+  font-size: 25px;
+}
+.ToDoList {
+  width: 600px;
+  margin: 0 auto;
+}
+.ToDoList_part {
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(170, 170, 170);
+}
+.doNum {
+  display: inline-block;
+  height: 20px;
+  line-height: 20px;
+  padding: 0 6px;
+  margin-right: 5px;
+  border-radius: 20px;
+  background: #e6e6fa;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+.listHead {
+  display: flex;
+  justify-content: space-between;
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+  height: 32px;
+  line-height: 32px;
+  background: #fff;
+  margin-top: 10px;
+  padding: 0 20px;
+  border-radius: 3px;
+  border-left: 5px solid #629a9c;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+
+  vertical-align: bottom;
+}
+.item input {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.removeItem {
+  font-weight: bold;
+  color: #e05c47;
+  width: 20px;
+  height: 20px;
+  line-height: 22px;
+  border-radius: 20px;
+  border: 1px solid #e05c47;
+  cursor: pointer;
+  margin-top: 5px;
+}
+.opcity_50 {
+  opacity: 0.5;
+}
 </style>
 
