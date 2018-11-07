@@ -3,15 +3,43 @@
 		<div class="top">
 			<div class="inner">
 				<label>ToDoList</label>
-				<input type="text" placeholder="添加ToDo">
+				<input type="text" placeholder="添加ToDo" @keydown.enter = keydown()>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+	import { mapState,mapMutations } from 'vuex';
+	
 	export default {
-		name: "Header"
+		name: "Header",
+		data(){
+			return{
+
+			}
+		},
+		computed:{
+			
+			
+		},
+		methods:{
+			...mapMutations(['push']),
+			keydown:function(){
+				let el = document.querySelector('.inner input'),
+					val = el.value;
+				if(val == '') {
+					el.classList.add('placeholderRed');
+					el.setAttribute('placeholder','请输入ToDo')
+				}else{
+					this.push({state:'doing',value:val});
+					// this.$store.commit('push',{st:'doing',value:val});
+					el.value = '';
+					el.classList.remove('placeholderRed');
+					el.setAttribute('placeholder','添加ToDo')
+				}
+			}
+		}
 	};
 </script>
 
@@ -43,6 +71,10 @@
 		background: #fff;
 		border: none;
 		outline: none;
+	}
+	.inner input.placeholderRed::placeholder{
+		color: #E05C47;
+		font-weight: bold;
 	}
 	
 </style>

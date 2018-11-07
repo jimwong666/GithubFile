@@ -1,13 +1,18 @@
 <template>
 	<div class="Footer">
 		王健 ToDoList
-		<button>清除所有记录</button>
+		<button @click = 'clear()'>清除所有记录</button>
 	</div>
 </template>
 
 <script>
+	import { mapState,mapMutations } from 'vuex';
+
 	export default {
 		name: "Footer",
+		methods:{
+			...mapMutations(['clear'])
+		}
 	};
 </script>
 

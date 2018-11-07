@@ -8,12 +8,12 @@
 				<span class="doNum">0</span>
 			</div>
 			<ul class="list">
-				<li class="item">
+				<li class="item" v-for="(item,index) in doing" :key="item.id">
 					<div>
-						<input type="checkbox">
-						<span>asas</span>
+						<input type="checkbox" :checked = false @click = 'remove({state:"doing",index:index});push({state:"done",value:item})'>
+						<span>{{item}}</span>
 					</div>
-					<div class="removeItem">—</div>
+					<div class="removeItem" @click = 'remove({state:"doing",index:index})'>X</div>
 				</li>
 			</ul>
 		</div>
@@ -24,12 +24,12 @@
 				<span class="doNum">0</span>
 			</div>
 			<ul class="list opcity_50">
-				<li class="item">
+				<li class="item" v-for="(item,index) in done" :key="item.id">
 					<div>
-						<input type="checkbox">
-						<span>asas</span>
+						<input type="checkbox" :checked = true @click = 'remove({state:"done",index:index});push({state:"doing",value:item})'>
+						<span>{{item}}</span>
 					</div>
-					<div class="removeItem">—</div>
+					<div class="removeItem" @click = 'remove({state:"done",index:index})'>X</div>
 				</li>
 			</ul>
 		</div>
@@ -41,6 +41,7 @@
 <script>
 import Header from "@/components/_header.vue";
 import Footer from "@/components/_footer.vue";
+import {mapState,mapMutations} from 'vuex';
 
 export default {
 	name: "home",
@@ -50,19 +51,21 @@ export default {
 	},
 	data(){
 		return{
-			doing:[
 
-			],
-			done:{
-
-			}
 		}
+	},
+	computed:{
+		...mapState(['doing','done'])
+	},
+	methods:{
+		...mapMutations(['remove','push'])
 	}
 };
 </script>
 
 <style>
 	@import '../assets/css/reset.css';
+
 	h3 {
 		color: #000;
 		font-size: 25px;
@@ -117,9 +120,9 @@ export default {
 		color: #E05C47;
 		width: 20px;
 		height: 20px;
-		line-height: 20px;
+		line-height: 22px;
 		border-radius: 20px;
-		border: 1px solid #333;
+		border: 1px solid #E05C47;
 		cursor: pointer;
 		margin-top: 5px;
 	}
