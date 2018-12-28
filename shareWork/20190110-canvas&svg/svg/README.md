@@ -6,7 +6,7 @@
 
 &emsp;
 ## 入门
-### 在HTML文件中直接使用：
+#### 在HTML文件中直接使用：
 ```html
 
     <svg version="1.1"
@@ -29,13 +29,31 @@
 &emsp;&emsp; **2.** SVG里的属性值必须用引号引起来，就算是数值也必须这样做。<br/>
 
 ---
-### 在HTML文件中引用：
+#### 在HTML文件中引用：
 ```html
-<object data="image.svg" type="image/svg+xml" />
+    <object data="image.svg" type="image/svg+xml" />
 ```
 ```html
-<iframe src="image.svg"></iframe>
+    <iframe src="image.svg"></iframe>
 ```
 ```html
-<image src="image.svg"></image>
+    <image src="image.svg"></image>
 ```
+而此时“image.svg”是什么文件呢？其实和原来的文件很像~
+```xml
+    <?xml version="1.0" standalone="no"?>
+    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+    <svg version="1.1"
+	    baseProfile="full"
+	    width="300" height="200"
+	    xmlns="http://www.w3.org/2000/svg">
+
+	    <rect width="100%" height="100%" fill="red" />
+
+	    <circle cx="150" cy="100" r="80" fill="green" />
+
+	    <text x="150" y="125" font-size="60" text-anchor="middle" fill="white">SVG</text>
+
+    </svg>
+```
+喏~ 就是这个~
