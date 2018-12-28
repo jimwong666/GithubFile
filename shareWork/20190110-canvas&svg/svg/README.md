@@ -24,18 +24,9 @@
 ```
 ![demo_1](https://github.com/jimwong666/GithubFile/blob/master/shareWork/20190110-canvas%26svg/svg/images/demo_1.png)
 
-> **注意：**<br/>
-> &emsp;&emsp; **1.** SVG的元素和属性必须按标准格式书写，因为XML是区分大小写的（这一点和html不同）<br/>
-> &emsp;&emsp; **2.** SVG里的属性值必须用引号引起来，就算是数值也必须这样做。<br/>
+**注意：**<br/>
+&emsp;&emsp; **1.** SVG的元素和属性必须按标准格式书写，因为XML是区分大小写的（这一点和html不同）<br/>
+&emsp;&emsp; **2.** SVG里的属性值必须用引号引起来，就算是数值也必须这样做。<br/>
 
-<hr/>
-
-
-***
 ---
-____
-
-
-
-
 **引用方式：**
