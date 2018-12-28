@@ -30,3 +30,12 @@
 
 ---
 **引用方式：**
+```html
+<object data="image.svg" type="image/svg+xml" />
+```
+```html
+<iframe src="image.svg"></iframe>
+```
+```html
+<image src="image.svg"></image>
+```
