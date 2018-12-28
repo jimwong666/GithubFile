@@ -6,9 +6,8 @@
 
 &emsp;
 ## 入门
-### 在HTML文件中直接使用
+### 在HTML文件中直接使用：
 ```html
-来看一个例子：
 
     <svg version="1.1"
         baseProfile="full"
@@ -30,8 +29,7 @@
 &emsp;&emsp; **2.** SVG里的属性值必须用引号引起来，就算是数值也必须这样做。<br/>
 
 ---
-### 在HTML文件中引用
-**引用方式：**
+### 在HTML文件中引用：
 ```html
 <object data="image.svg" type="image/svg+xml" />
 ```
