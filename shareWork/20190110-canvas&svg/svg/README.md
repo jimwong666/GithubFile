@@ -27,5 +27,5 @@
 > **注意：**<br/>
 > &emsp;&emsp; **1.** SVG的元素和属性必须按标准格式书写，因为XML是区分大小写的（这一点和html不同）<br/>
 > &emsp;&emsp; **2.** SVG里的属性值必须用引号引起来，就算是数值也必须这样做。<br/>
-
+<table><tr><td bgcolor=PowderBlue>这里的背景色是：PowderBlue，  十六进制颜色值： #B0E0E6，rgb(176, 224, 230)</td></tr></table>
 <div style="display:inline-block; background:#333;color:white; font-weight:bold; padding:0 15px 0 10px;">引用方式：<div/>
