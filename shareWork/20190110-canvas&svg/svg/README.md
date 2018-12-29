@@ -1,3 +1,8 @@
+* [SVG](#SVG)
+  * [入门](#入门)
+    * [HTML标签引用](#在HTML文件中直接使用：)
+    * [HTML中使用](#在HTML文件中引用：)
+  
 # SVG
 > &emsp;&emsp;SVG 是一种基于 XML 语法的图像格式，全称是可缩放矢量图（Scalable Vector Graphics）。jpg、png、gif等图像格式都是基于像素处理的，SVG 则是属于对图像的形状描述，所以它本质上是文本文件，体积较小，且不管放大多少倍都不会失真。<br/>
 > &emsp;&emsp;SVG也提供了一些元素，用于定义圆形、矩形、简单或复杂的曲线，以及其他形状。一个简单的SVG文档由`<svg>`根元素和基本的形状元素构成。另外还有一个g元素，它用来把若干个基本形状编成一个组。<br/>
@@ -37,7 +42,7 @@
 ```html
     <image src="image.svg"></image>
 ```
-而此时“image.svg”是什么文件呢？其实和原来的文件很像~
+而此时“image.svg”是什么文件(xml)呢？其实和原来的文件很像~
 ```xml
     <?xml version="1.0" standalone="no"?>
     <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
