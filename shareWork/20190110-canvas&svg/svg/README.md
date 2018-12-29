@@ -26,9 +26,12 @@
 
     </svg>
 ```
+
+效果：
 <p align="center">
-<img width="550" src="https://github.com/jimwong666/GithubFile/blob/master/shareWork/20190110-canvas%26svg/svg/images/demo_1.png" alt="demo_1">
+<img src="https://github.com/jimwong666/GithubFile/blob/master/shareWork/20190110-canvas%26svg/svg/images/demo_1.png" alt="demo_1">
 <p/>
+<br/>
 
 **注意：**<br/>
 &emsp;&emsp; **1.** SVG的元素和属性必须按标准格式书写，因为XML是区分大小写的（这一点和html不同）<br/>
