@@ -2,6 +2,7 @@
   * [入门](#入门-感性的相识)
     * [HTML标签使用](#HTML标签使用)
     * [HTML中引用](#HTML中引用)
+  * [深入](#深入-理性的相知)
   
 # SVG
 > &emsp;&emsp;SVG 是一种基于 XML 语法的图像格式，全称是可缩放矢量图（Scalable Vector Graphics）。jpg、png、gif等图像格式都是基于像素处理的，SVG 则是属于对图像的形状描述，所以它本质上是文本文件，体积较小，且不管放大多少倍都不会失真。<br/>
@@ -25,11 +26,15 @@
 
     </svg>
 ```
-![demo_1](https://github.com/jimwong666/GithubFile/blob/master/shareWork/20190110-canvas%26svg/svg/images/demo_1.png)
+<p align="center">
+<img width="550" src="https://github.com/jimwong666/GithubFile/blob/master/shareWork/20190110-canvas%26svg/svg/images/demo_1.png" alt="demo_1">
+<p/>
 
 **注意：**<br/>
 &emsp;&emsp; **1.** SVG的元素和属性必须按标准格式书写，因为XML是区分大小写的（这一点和html不同）<br/>
-&emsp;&emsp; **2.** SVG里的属性值必须用引号引起来，就算是数值也必须这样做。<br/>
+&emsp;&emsp; **2.** SVG里的属性值必须用引号引起来，就算是数值也必须这样做。
+<p/>
+<br/>
 
 -------------------------------------------------------------------------
 #### HTML中引用
@@ -62,3 +67,11 @@
 喏~! 就是这个~ 最上面多了两行奇怪的东西
 
 -------------------------------------------------------------------------
+## 深入-理性的相知
+#### 坐标定位
+> &emsp;&emsp;SVG使用的坐标系统或者说网格系统，和Canvas用的差不多（所有计算机绘图都差不多）。这种坐标系统是：以页面的左上角为(0,0)坐标原点，坐标以像素为单位，x轴正方向是向右，y轴正方向是向下。【注意】这和我们小时候所学的坐标系是不一样的。但是在HTML文档中，元素都是用这种方式定位的。
+
+所以我们定义一个矩形
+```html
+    <rect x="0" y="0" width="100" height="100" />
+```
