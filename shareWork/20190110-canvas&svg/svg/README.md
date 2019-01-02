@@ -50,6 +50,7 @@
     <image src="image.svg"></image>
 ```
 而此时“image.svg”是什么文件(xml)呢？其实和原来的文件很像~
+
 ```xml
     <?xml version="1.0" standalone="no"?>
     <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
