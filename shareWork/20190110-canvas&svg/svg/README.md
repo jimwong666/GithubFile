@@ -39,7 +39,7 @@
 &emsp;&emsp; **2.** SVG里的属性值必须用引号引起来，就算是数值也必须这样做。
 <br/>
 
-<p borderTop="1px solid #eaecef"></p>
+##  
 
 #### HTML中引用
 ```html
