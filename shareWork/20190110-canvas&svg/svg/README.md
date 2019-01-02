@@ -30,17 +30,15 @@
 效果：
 <p align="center">
 <img src="https://github.com/jimwong666/GithubFile/blob/master/shareWork/20190110-canvas%26svg/svg/images/img_1.png" alt="img_1">
-<p/>
+</p>
 <br/>
+
 
 **注意：**<br/>
 &emsp;&emsp; **1.** SVG的元素和属性必须按标准格式书写，因为XML是区分大小写的（这一点和html不同）<br/>
 &emsp;&emsp; **2.** SVG里的属性值必须用引号引起来，就算是数值也必须这样做。
-<p/>
 <br/>
-
-<p style="border-top:1px solid #eaecef;"></p>	
-
+<div style="border-top:1px solid #eaecef"></div>	
 #### HTML中引用
 ```html
     <object data="image.svg" type="image/svg+xml" />
@@ -78,7 +76,7 @@
 示意图：
 <p align="center">
 <img src="https://github.com/jimwong666/GithubFile/blob/master/shareWork/20190110-canvas%26svg/svg/images/img_2.png" alt="img_2">
-<p/>
+</p>
 <br/>
 
 所以我们定义一个矩形
