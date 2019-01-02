@@ -94,11 +94,6 @@
 [//]: <> (This is also a comment.)
 [//]: # (This may be the most platform independent comment)
 
-作者：dvorak4tzx
-链接：https://www.jianshu.com/p/9be87e7e15bf
-來源：简书
-简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
-
 ## 深入-理性的相知
 #### 坐标定位
 > &emsp;&emsp;SVG使用的坐标系统或者说网格系统，和Canvas用的差不多（所有计算机绘图都差不多）。这种坐标系统是：以页面的左上角为(0,0)坐标原点，坐标以像素为单位，x轴正方向是向右，y轴正方向是向下。【注意】这和我们小时候所学的坐标系是不一样的。但是在HTML文档中，元素都是用这种方式定位的。
