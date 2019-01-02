@@ -39,7 +39,7 @@
 <p/>
 <br/>
 
-<div style="border-top:1px solid #eaecef;"></div>	
+<p style="border-top:1px solid #eaecef;"></p>	
 
 #### HTML中引用
 ```html
