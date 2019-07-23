@@ -64,7 +64,7 @@ module.exports = {
       ]
     },
     devServer: {
-      contentBase: '../dist',
+      contentBase: path.join(__dirname, '../', 'dist'),
       open: true,
       compress: true,
       disableHostCheck: true,
@@ -89,11 +89,12 @@ module.exports = {
       }),
     ],
     resolve: {
-        // 文件扩展名，写明以后就不需要每个文件写后缀
-        extensions: ['.js', '.css', '.json'],
-        // 路径别名，比如这里可以使用 css 指向 static/css 路径
-        alias: {
-          '@': path.resolve(__dirname, '../')
-        }
+      // 文件扩展名，写明以后就不需要每个文件写后缀
+      extensions: ['.js', '.css', '.json'],
+      // 路径别名，比如这里可以使用 css 指向 static/css 路径
+      alias: {
+        '@': path.resolve(__dirname, '../')
       }
+    },
+    devtool:"cheap-module-eval-source-map", // 生产环境 "cheap-module-source-map"
   }
