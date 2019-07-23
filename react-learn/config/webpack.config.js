@@ -46,7 +46,8 @@ module.exports = {
         },
         {
           test: /\.css$/,
-          include: [path.resolve(__dirname, '../', 'src')],
+          // include: [path.resolve(__dirname, '../', 'src')],
+          exclude: /node_modules/,
           use: [
             // 提取css为独立文件
             {
@@ -57,6 +58,74 @@ module.exports = {
               options: {
                 // 开启类名等的hash值
                 // modules: true
+              }
+            }
+          ]
+        },
+        {
+          test: /\.scss$/,
+          // include: [path.resolve(__dirname, '../', 'src')],
+          exclude: /node_modules/,
+          use: [
+            // 提取css为独立文件
+            {
+              loader: MiniCssExtractPlugin.loader
+            },
+            {
+              loader: "css-loader",
+              options: {
+                importLoaders: 2, //在@import之前要经过几次loader，下面的loader
+                // 开启类名等的hash值
+                // modules: true
+                // localIdentName: '[local]--[hash:base64:5]',
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                config: {
+                  path: path.resolve(__dirname, './postcss.config.js') //使用postcss单独的配置文件
+                }
+              }
+            },
+            {
+              loader: "sass-loader",
+              options: {
+                sourceMap: true
+              }
+            }
+          ]
+        },
+        {
+          test: /\.less$/,
+          // include: [path.resolve(__dirname, '../', 'src')],
+          exclude: /node_modules/,
+          use: [
+            // 提取css为独立文件
+            {
+              loader: MiniCssExtractPlugin.loader
+            },
+            {
+              loader: "css-loader",
+              options: {
+                importLoaders: 2, //在@import之前要经过几次loader，下面的loader
+                // 开启类名等的hash值
+                // modules: true
+                // localIdentName: '[local]--[hash:base64:5]',
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                config: {
+                  path: path.resolve(__dirname, './postcss.config.js') //使用postcss单独的配置文件
+                }
+              }
+            },
+            {
+              loader: "less-loader",
+              options: {
+                sourceMap: true
               }
             }
           ]

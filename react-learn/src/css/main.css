@@ -1,0 +1,5 @@
+@import './image.scss';
+@import './other.less';
+body {
+	background: rgb(53, 34, 34);
+}

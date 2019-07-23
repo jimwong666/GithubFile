@@ -1,4 +1,4 @@
-import "../css/image.css";
+import "../css/main.css";
 
 export default () => {
 	let smallImg = document.createElement('img');
