@@ -11,21 +11,6 @@ module.exports = {
       publicPath: "./"
     },
     mode: "development",
-    plugins: [
-      //提取css为单独css文件
-      new MiniCssExtractPlugin({
-        filename: 'css/[name].[contenthash:8].css',
-        chunkFilename: 'css/[name].[contenthash:8].css'
-      }),
-      // 自动添加模版
-      new HtmlWebpackPlugin({
-        title: 'test',
-			  filename: 'index.html',
-			  template: path.resolve(__dirname, '../', 'index.html'),
-			  // favicon: path.resolve(__dirname, '../', 'public/favicon.ico')
-      }),
-      new CleanWebpackPlugin(), // 打包后先清除dist文件，先于HtmlWebpackPlugin运行，清楚地目录是 output.path
-    ],
     module: {
       rules: [
         {
@@ -79,8 +64,30 @@ module.exports = {
       ]
     },
     devServer: {
-      contentBase: path.join(__dirname, '../dist/index.html')
+      contentBase: '../dist',
+      open: true,
+      compress: true,
+      disableHostCheck: true,
+      hot: true,
+      historyApiFallback: true,
+      publicPath: '/',
+      overlay: true,
     },
+    plugins: [
+      new CleanWebpackPlugin(), // 打包后先清除dist文件，先于HtmlWebpackPlugin运行，清楚地目录是 output.path
+      //提取css为单独css文件
+      new MiniCssExtractPlugin({
+        filename: 'css/[name].[contenthash:8].css',
+        chunkFilename: 'css/[name].[contenthash:8].css'
+      }),
+      // 自动添加模版
+      new HtmlWebpackPlugin({
+        title: 'test',
+			  filename: 'index.html',
+			  template: path.resolve(__dirname, '../', 'index.html'),
+			  // favicon: path.resolve(__dirname, '../', 'public/favicon.ico')
+      }),
+    ],
     resolve: {
         // 文件扩展名，写明以后就不需要每个文件写后缀
         extensions: ['.js', '.css', '.json'],
