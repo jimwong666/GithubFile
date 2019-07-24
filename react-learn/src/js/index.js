@@ -1,8 +1,10 @@
 // index.js
-import sum from './sum';
-import addImages from './addImages';
+import app from './app';
 
-addImages();
-console.log(sum(1, 2));
-// import sum from './sum'
-// console.log(sum(1, 2))
+app();
+
+if(module.hot) {
+    module.hot.accept('./app', () => {
+        app();
+    })
+}

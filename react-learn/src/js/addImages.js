@@ -10,4 +10,6 @@ export default () => {
 	let bigImg = document.createElement('img');
 	bigImg.src = require('@/images/asdf.jpg');
 	imgZone.appendChild(bigImg);
+
+	console.log("addImages111")
 }
