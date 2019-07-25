@@ -2,5 +2,5 @@
 @import './other.less';
 body {
 	background: rgb(179, 152, 152);
-	border: black 10px solid;
+	border: black 1px solid;
 }
