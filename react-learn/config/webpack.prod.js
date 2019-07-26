@@ -83,7 +83,7 @@ module.exports = webpackMerge(webpackBaseConfig, {
           }
         ]
       },
-      {
+      { // 编译依赖，如想修改ant的css源码
         test: /\.(css|less)$/,
         include: /node_modules/,
         use: [
@@ -101,6 +101,7 @@ module.exports = webpackMerge(webpackBaseConfig, {
             loader: "less-loader",
             options: {
               javascriptEnabled: true,
+              // modifyVars: {"@primary-color": "#f9c700"} //修改UI库里面的less变量
             }
           }
         ]
