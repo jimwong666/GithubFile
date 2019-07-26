@@ -53,40 +53,8 @@ module.exports = webpackMerge(webpackBaseConfig, {
         ]
       },
       {
-        test: /\.css$/,
-        include: [path.resolve(__dirname, '../', 'src')],
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'style-loader',
-            options: {
-                sourceMap: true
-            }
-          },
-          {
-            loader: "css-loader",
-            options: {
-              importLoaders: 1, //在@import之前要经过几次loader，下面的loader
-              sourceMap: true,
-              // 开启类名等的hash值
-              // modules: true,
-              // localIdentName: '[local]--[hash:base64:5]',
-            }
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-              config: {
-                path: path.resolve(__dirname, './postcss.config.js') //使用postcss单独的配置文件
-              }
-            }
-          },
-        ]
-      },
-      {
         test: /\.scss$/,
-        // include: [path.resolve(__dirname, '../', 'src')],
+        include: [path.resolve(__dirname, '../', 'src')],
         exclude: /node_modules/,
         use: [
           {
@@ -101,8 +69,7 @@ module.exports = webpackMerge(webpackBaseConfig, {
               importLoaders: 2, //在@import之前要经过几次loader，下面的loader
               sourceMap: true,
               // 开启类名等的hash值
-              // modules: true,
-              // localIdentName: '[local]--[hash:base64:5]',
+              modules: true,
             }
           },
           {
@@ -123,39 +90,19 @@ module.exports = webpackMerge(webpackBaseConfig, {
         ]
       },
       {
-        test: /\.less$/,
-        // include: [path.resolve(__dirname, '../', 'src')],
-        exclude: /node_modules/,
+        test: /\.(css|less)$/,
+        include: /node_modules/, // 编译依赖，如ant
         use: [
           {
-            loader: 'style-loader',
-            options: {
-                sourceMap: true
-            }
+            loader: 'style-loader'
           },
           {
-            loader: "css-loader",
-            options: {
-              importLoaders: 2, //在@import之前要经过几次loader，下面的loader
-              sourceMap: true,
-              // 开启类名等的hash值
-              // modules: true,
-              // localIdentName: '[local]--[hash:base64:5]',
-            }
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-              config: {
-                path: path.resolve(__dirname, './postcss.config.js') //使用postcss单独的配置文件
-              }
-            }
+            loader: "css-loader"
           },
           {
             loader: "less-loader",
             options: {
-              sourceMap: true
+              javascriptEnabled: true,
             }
           }
         ]
@@ -164,6 +111,6 @@ module.exports = webpackMerge(webpackBaseConfig, {
   },
   plugins: [
     new webpack.NamedModulesPlugin(),  //用于启动HMR时可以显示模块的相对路径
-    new webpack.HotModuleReplacementPlugin(),
+    new webpack.HotModuleReplacementPlugin(), // HMR
   ],
 })

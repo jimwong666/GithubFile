@@ -26,10 +26,10 @@ module.exports = webpackMerge(webpackBaseConfig, {
               loader: 'url-loader',
               // 配置 url-loader 的可选项
               options: {
-                name: '[name].[hash].[ext]',
+                name: '[name].[hash:8].[ext]',
                 // 超出限制，创建的文件格式
                 outputPath: 'images/',
-                // 限制 图片大小 10000B，小于限制会将图片转换为 base64格式
+                // 限制 图片大小 100kb，小于限制会将图片转换为 base64格式
                 limit: 102400,
               }
             }
@@ -40,55 +40,31 @@ module.exports = webpackMerge(webpackBaseConfig, {
         use: {
             loader: 'url-loader',
             options: {
-                name: '[name]-[hash:5].min.[ext]', // 和上面同理
+                name: '[name]-[hash:5].min.[ext]', 
                 outputPath: 'fonts/',
                 limit: 102400,
             }
         },
       },
       {
-        test: /\.css$/,
-        // include: [path.resolve(__dirname, '../', 'src')],
-        exclude: /node_modules/,
-        use: [
-          // 提取css为独立文件
-          {
-            loader: MiniCssExtractPlugin.loader
-          },
-          {
-            loader: "css-loader",
-            options: {
-              importLoaders: 1,
-              // 开启类名等的hash值
-              // modules: true
-            }
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              config: {
-                path: path.resolve(__dirname, './postcss.config.js') //使用postcss单独的配置文件
-              }
-            }
-          },
-        ]
-      },
-      {
         test: /\.scss$/,
-        // include: [path.resolve(__dirname, '../', 'src')],
+        include: [path.resolve(__dirname, '../', 'src')],
         exclude: /node_modules/,
         use: [
           // 提取css为独立文件
           {
-            loader: MiniCssExtractPlugin.loader
+            loader: MiniCssExtractPlugin.loader,
+						// options: {
+						// 	publicPath: '../' //css中引入背景图片会在图片url前面加上该路径
+						// },
           },
           {
             loader: "css-loader",
             options: {
               importLoaders: 2, //在@import之前要经过几次loader，下面的loader
+              sourceMap: true,
               // 开启类名等的hash值
-              // modules: true
-              // localIdentName: '[local]--[hash:base64:5]',
+              modules: true,
             }
           },
           {
@@ -108,35 +84,23 @@ module.exports = webpackMerge(webpackBaseConfig, {
         ]
       },
       {
-        test: /\.less$/,
-        // include: [path.resolve(__dirname, '../', 'src')],
-        exclude: /node_modules/,
+        test: /\.(css|less)$/,
+        include: /node_modules/,
         use: [
           // 提取css为独立文件
           {
-            loader: MiniCssExtractPlugin.loader
+            loader: MiniCssExtractPlugin.loader,
+            // options: {
+            //   publicPath: '../' //css中引入背景图片会在图片url前面加上该路径
+            // },
           },
           {
-            loader: "css-loader",
-            options: {
-              importLoaders: 2, //在@import之前要经过几次loader，下面的loader
-              // 开启类名等的hash值
-              // modules: true
-              // localIdentName: '[local]--[hash:base64:5]',
-            }
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              config: {
-                path: path.resolve(__dirname, './postcss.config.js') //使用postcss单独的配置文件
-              }
-            }
+            loader: "css-loader"
           },
           {
             loader: "less-loader",
             options: {
-              sourceMap: true
+              javascriptEnabled: true,
             }
           }
         ]
