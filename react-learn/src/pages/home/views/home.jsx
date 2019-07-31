@@ -9,12 +9,12 @@ const CB = classNames.bind(styles);
 export default class Home extends React.Component {
 	render() {
 		return (
-			<div>
+			<React.Fragment>
 				<div className={CB("qwer")}>我是home!啦啦啦~</div>
 				<div id={CB("qwer")}>我是id!啦啦啦~</div>
 				<Button type='primary'>Button</Button>
 				<Clock />
-			</div>
+			</React.Fragment>
 		);
 	}
 }

@@ -8,10 +8,10 @@ const CB = classNames.bind(styles);
 export default class App extends React.Component {
 	render() {
 		return (
-			<div>
+			<React.Fragment>
 				<div className={CB("qwer")}>hello~我是第一个React应用！123321</div>
 				<Home />
-			</div>
+			</React.Fragment>
 		);
 	}
 }
