@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry:  ['@babel/polyfill',path.resolve(__dirname, '../', 'src/js/index.js')], // 入口文件
+    entry:  ['@babel/polyfill',path.resolve(__dirname, '../', 'src/index.js')], // 入口文件
     module: {
       rules: [
         {
@@ -26,8 +26,8 @@ module.exports = {
       // 自动添加模版
       new HtmlWebpackPlugin({
 			  filename: 'index.html',
-			  template: path.resolve(__dirname, '../', 'index.html'),
-			  // favicon: path.resolve(__dirname, '../', 'public/favicon.ico')
+			  template: path.resolve(__dirname, '../', 'public/index.html'),
+			  favicon: path.resolve(__dirname, '../', 'public/favicon.ico')
       }),
       new webpack.DefinePlugin({ // 自定义全局常量
 
@@ -42,7 +42,12 @@ module.exports = {
       extensions: ['.js', '.jsx', '.css', '.json'],
       // 路径别名，比如这里可以使用 css 指向 static/css 路径
       alias: {
-        '@': path.resolve(__dirname, '../src')
+        '@': path.resolve(__dirname, '../src'),
+        _components: path.resolve(__dirname, '../', 'src/components'),
+        _pages: path.resolve(__dirname, '../', 'src/pages'),
+        _styles: path.resolve(__dirname, '../', 'src/styles'),
+        _images: path.resolve(__dirname, '../', 'src/images'),
+        _utils: path.resolve(__dirname, '../', 'src/utils')
       }
     },
 }

@@ -1,7 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import styles from '../css/main.scss';
-import Home from './Home.jsx';
+import styles from '_styles/main.scss';
+import Home from '_pages/home/views/home.jsx';
 import classNames from "classnames/bind";
 
 const CB = classNames.bind(styles);

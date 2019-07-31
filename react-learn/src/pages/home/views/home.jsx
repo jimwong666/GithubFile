@@ -1,8 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import styles from '../css/home.scss';
+import styles from '../styles/index.scss';
 import classNames from "classnames/bind";
 import { Button } from "antd";
+import Clock from "components/widgets/clock/views/index.jsx";
 
 const CB = classNames.bind(styles);
 
@@ -13,6 +13,7 @@ export default class Home extends React.Component {
 				<div className={CB("qwer")}>我是home!啦啦啦~</div>
 				<div id={CB("qwer")}>我是id!啦啦啦~</div>
 				<Button type='primary'>Button</Button>
+				<Clock />
 			</div>
 		);
 	}
