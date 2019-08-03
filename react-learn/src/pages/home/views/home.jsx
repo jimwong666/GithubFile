@@ -11,7 +11,7 @@ export default class Home extends React.Component {
 		return (
 			<React.Fragment>
 				<div className={CB("qwer")}>我是home!啦啦啦~</div>
-				<div id={CB("qwer")}>我是id!啦啦啦~</div>
+				<div id={CB("qwer")}>我是id!啦啦啦~123we7889451qqqq</div>
 				<Button type='primary'>Button</Button>
 				<Clock />
 			</React.Fragment>
