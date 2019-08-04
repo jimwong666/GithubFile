@@ -1,0 +1,27 @@
+body {
+	min-width: 768px;
+}
+.logo {
+	height: 64px;
+	flex: none;
+	justify-content: space-between;
+    margin: 0 20px 0 10px;
+	font-family: '黑体';
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+}
+.header {
+	display: flex;
+	
+}
+.menu {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 64px;
+	flex: auto;
+}
+.avatar {
+	flex: none;
+	margin-right: 10px;
+}
