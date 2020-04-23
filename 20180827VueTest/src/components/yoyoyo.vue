@@ -6,6 +6,7 @@
     <p>父组件传过来的msg_2:{{Msg_2}}</p>
     <p>Msg_2:<input type="text" v-model="msgInit"></p>
     <p ref="babala">watch监听(watch可监听子组件中msgInit的变化)：{{msgInit}}</p>
+    <button @click="addText">+</button>
 
     
     <p>
@@ -44,6 +45,9 @@ export default {
   methods:{
     reseive:function(val){
       this.childVal = val;
+    },
+    addText: function(val){
+      this.msgInit += "+";
     }
   },
   watch:{
