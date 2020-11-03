@@ -3,13 +3,13 @@
 		[
 			"@babel/preset-env", {  // 将es6的语法翻译成es5语法
 				"targets": {
-					"chrome": "67",
+					"chrome": "67"
 				},
 				"useBuiltIns": "usage", // 做@babel/polyfill补充时，按需补充，用到什么才补充什么,
-				"corejs": "2",
+				"corejs": "2"
 			}
 		],
-		"@babel/preset-react",
+		"@babel/preset-react"
 	],
 	"plugins": [
 		//启动react代码热替换
@@ -26,6 +26,6 @@
 				"style": true // 自动引入antd组件的css
 			},
 			"antd"
-		],
+		]
 	]
 }
